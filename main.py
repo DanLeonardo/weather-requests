@@ -33,6 +33,7 @@ def parse_arguments():
     return args
 
 def display_weather(data, args):
+    print('display')
     if 'name' in data:
         print(data['name'])
 
@@ -115,7 +116,6 @@ if __name__ == '__main__':
     else:
         print('error nowhere')
 
-    # r = requests.get(url=API_URL, params=params)
-    # data = r.json()
-    data = {}
+    r = requests.get(url=API_URL, params=params)
+    data = r.json()
     display_weather(data, None)
